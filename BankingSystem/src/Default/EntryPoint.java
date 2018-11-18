@@ -39,12 +39,12 @@ public class EntryPoint {
 			break;
 		case 1:
 			createANewAccount();
-			menu.printFirstMenu();
+			menu.backToMainMenu();
 			performActionFirstMenu();
 			break;
 		case 2:
 			linkAccountToUser();
-			menu.printFirstMenu();
+			menu.backToMainMenu();
 			performActionFirstMenu();
 			break;
 		case 3: 
@@ -59,11 +59,11 @@ public class EntryPoint {
 			break;
 		case 5:
 			makeATransaction();
-			menu.printFirstMenu();
+			menu.backToMainMenu();
 			performActionFirstMenu();
 		case 7:
 			addNewCustomer();
-			menu.printFirstMenu();
+			menu.backToMainMenu();
 			performActionFirstMenu();
 		}
 	}
@@ -98,6 +98,7 @@ public class EntryPoint {
 		Account depositAccount = myAccountList.getAccountByIndex(i);
 	
 		//add Exception Handling
+		
 		double depositAmount = Double.parseDouble(keyRead.nextLine());
 		depositAccount.deposit(depositAmount);
 		transactionList.add(new Transaction(depositAmount,"Debit",accountNumber));
@@ -155,6 +156,7 @@ public class EntryPoint {
 		System.out.println("Linked account number `" + accountNumber 
 				+ "` with customer " + customerSsn);
 	}
+	
 	
 	private static void addNewCustomer() {
 		System.out.println("Enter customer name: ");

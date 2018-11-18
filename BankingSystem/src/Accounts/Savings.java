@@ -7,9 +7,6 @@ public class Savings extends Account {
 	
 	
 	public Savings(){
-		nextAccountNum ++;
-		this.setBalance(getBalance());
-		this.chekInterest();
 	}
 	
 	
