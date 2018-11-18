@@ -42,7 +42,7 @@ public class Account {
 	public void withdrawl(double amount) {
 		if (amount + 5 > balance) { // 5 is the charge of the withdrawl proccess
 
-			System.out.println("You so not have enough money in your account!");
+			System.out.println("You do not have enough money in your account!");
 
 		}
 

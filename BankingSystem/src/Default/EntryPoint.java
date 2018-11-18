@@ -12,19 +12,21 @@ import Connections.Connection;
 import Customers.CustomersList;
 
 public class EntryPoint {
-	
+
 	static Menu menu;
 	static Scanner keyRead = new Scanner(System.in);
 	static AccountsList myAccountList = new AccountsList();
 	static CustomersList clientList = new CustomersList();
+
 	static ArrayList<Connection> connectionList = new ArrayList();
 	
+
 	public static void main(String[] args) {
 		menu = new Menu();
 		menu.printFirstMenu();
 		performActionFirstMenu();
 	}
-	
+
 	private static void performActionFirstMenu() {
 		int choice;
 		System.out.println();
@@ -41,11 +43,43 @@ public class EntryPoint {
 			performActionFirstMenu();
 			break;
 		case 2:
-			linkAccountToUser();
+
+			
+			break;
+		case 3: 
+			makeAdeposit();
+
+			break;
+			
+		case 4: 
+			makeAWithdrawl();
 			break;
 		}
 	}
+
+	private static void makeAWithdrawl() {
+		System.out.println("Enter the account number:");
+		String accountNumber = keyRead.nextLine();
+		int i = myAccountList.getIndexByAccountNumber(accountNumber);
+		Account depositAccount = myAccountList.getAccountByIndex(i);
 	
+		//add Exception Handling
+		System.out.println("Enter the withdrawl amount: ");
+		double withdrawlAmount = Double.parseDouble(keyRead.nextLine());
+		depositAccount.withdrawl(withdrawlAmount);				
+	}
+
+	private static void makeAdeposit() {
+		System.out.println("Enter the account number:");
+		String accountNumber = keyRead.nextLine();
+		int i = myAccountList.getIndexByAccountNumber(accountNumber);
+		Account depositAccount = myAccountList.getAccountByIndex(i);
+	
+		//add Exception Handling
+		double depositAmount = Double.parseDouble(keyRead.nextLine());
+		depositAccount.deposit(depositAmount);		
+	}
+
 	private static void createANewAccount() {
 
 //		getNewCustomerInfo();
@@ -68,6 +102,7 @@ public class EntryPoint {
 		performActionFirstMenu();
 
 	}
+
 	
 	private static void linkAccountToUser() {
 		
@@ -93,5 +128,5 @@ public class EntryPoint {
 		
 //		connectionList.
 	}
-	
 }
+	

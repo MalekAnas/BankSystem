@@ -1,11 +1,11 @@
 package Customers;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 
 
 public class CustomersList {
-	LinkedList<Customer> clientsList = new LinkedList();
+	ArrayList<Customer> clientsList = new ArrayList();
 	
 	public void addNewCustomer(Customer newCustomer) {
 		
@@ -26,12 +26,11 @@ public class CustomersList {
 	}
 	
 
-	public LinkedList<Customer> customersList = new LinkedList<>();
 
-	private int searchCustomerBySsn(String ssn) {
+	public  int searchCustomerBySsn(String ssn) {
 
-		for (int i = 0; i < customersList.size(); i++) {
-			if (ssn == (customersList.get(i).getSsn()))
+		for (int i = 0; i < clientsList.size(); i++) {
+			if (ssn == (clientsList.get(i).getSsn()))
 				return i;
 		}
 
@@ -42,19 +41,17 @@ public class CustomersList {
 	
 public Customer getCustomer(int i) {
 		
-		return customersList.get(i);
+		return clientsList.get(i);
 	}	
 
 
-	public LinkedList<Customer> getCustomersList() {
-		return customersList;
-	}
+	
 
-	public void setCustomersList(LinkedList<Customer> customersList) {
-		this.customersList = customersList;
+	public void setCustomersList(ArrayList<Customer> customersList) {
+		this.clientsList = customersList;
 	}
 
 	public void clearCustomersList() {
-		customersList.clear();
+		clientsList.clear();
 	}
 }
