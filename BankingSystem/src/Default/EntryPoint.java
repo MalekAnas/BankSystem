@@ -19,7 +19,6 @@ public class EntryPoint {
 	static CustomersList clientList = new CustomersList();
 	static ArrayList<Connection> connectionList = new ArrayList();
 	static ArrayList<Transaction> transactionList = new ArrayList();
-	
 
 	public static void main(String[] args) {
 		menu = new Menu();
@@ -39,42 +38,40 @@ public class EntryPoint {
 			break;
 		case 1:
 			createANewAccount();
-			menu.backToMainMenu();
+			menu.printFirstMenu();
 			performActionFirstMenu();
 			break;
 		case 2:
 			linkAccountToUser();
-			menu.backToMainMenu();
+			menu.printFirstMenu();
 			performActionFirstMenu();
 			break;
-		case 3: 
+		case 3:
 			makeAdeposit();
 			menu.printFirstMenu();
 			performActionFirstMenu();
 			break;
-		case 4: 
+		case 4:
 			makeAWithdrawl();
 			menu.printFirstMenu();
 			performActionFirstMenu();
 			break;
 		case 5:
 			addNewCustomer();
-			menu.backToMainMenu();
+			menu.printFirstMenu();
 			performActionFirstMenu();
-		
+
 			break;
 		case 6:
 			prinAreport();
 			break;
-			
+
 		}
 	}
 
-	
-
 	private static void prinAreport() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	private static void makeAWithdrawl() {
@@ -82,25 +79,43 @@ public class EntryPoint {
 		int accountNumber = Integer.parseInt(keyRead.nextLine());
 		int i = myAccountList.getIndexByAccountNumber(accountNumber);
 		Account depositAccount = myAccountList.getAccountByIndex(i);
-	
-		//add Exception Handling
+		int accountIndex = -1;
+		while (accountIndex < 0) {
+			System.out.println("Enter account number: ");
+			accountNumber = Integer.parseInt(keyRead.nextLine());
+			accountIndex = myAccountList.getIndexByAccountNumber(accountNumber);
+			if (accountIndex == -1) {
+				System.out.println("Account `" + accountNumber + "` does not exist!");
+			}
+		}
+		// add Exception Handling
 		System.out.println("Enter the withdrawl amount: ");
 		double withdrawlAmount = Double.parseDouble(keyRead.nextLine());
 		depositAccount.withdrawl(withdrawlAmount);
-		transactionList.add(new Transaction(withdrawlAmount,"Credit",accountNumber));
+		transactionList.add(new Transaction(withdrawlAmount, "Credit", accountNumber));
 	}
 
 	private static void makeAdeposit() {
 		System.out.println("Enter the account number:");
 		int accountNumber = Integer.parseInt(keyRead.nextLine());
 		int i = myAccountList.getIndexByAccountNumber(accountNumber);
+		int accountIndex = -1;
+
+		while (accountIndex < 0) {
+			System.out.println("Enter account number: ");
+			accountNumber = Integer.parseInt(keyRead.nextLine());
+			accountIndex = myAccountList.getIndexByAccountNumber(accountNumber);
+			if (accountIndex == -1) {
+				System.out.println("Account `" + accountNumber + "` does not exist!");
+			}
+		}
 		Account depositAccount = myAccountList.getAccountByIndex(i);
-	
-		//add Exception Handling
-		
+
+		// add Exception Handling
+		System.out.println("Enter the deposit amount");
 		double depositAmount = Double.parseDouble(keyRead.nextLine());
 		depositAccount.deposit(depositAmount);
-		transactionList.add(new Transaction(depositAmount,"Debit",accountNumber));
+		transactionList.add(new Transaction(depositAmount, "Debit", accountNumber));
 	}
 
 	private static void createANewAccount() {
@@ -126,40 +141,37 @@ public class EntryPoint {
 
 	}
 
-	
 	private static void linkAccountToUser() {
-		
+
 		int accountIndex = -1;
 		int accountNumber = 0;
-		while(accountIndex < 0) {
+		while (accountIndex < 0) {
 			System.out.println("Enter account number: ");
 			accountNumber = Integer.parseInt(keyRead.nextLine());
 			accountIndex = myAccountList.getIndexByAccountNumber(accountNumber);
-			if(accountIndex == -1) {
+			if (accountIndex == -1) {
 				System.out.println("Account `" + accountNumber + "` does not exist!");
 			}
 		}
-		
+
 		int customerIndex = -1;
 		String customerSsn = "";
-		while(customerIndex < 0) {
+		while (customerIndex < 0) {
 			System.out.println("Enter customer ssn: ");
 			customerSsn = keyRead.nextLine();
 			customerIndex = clientList.searchCustomerBySsn(customerSsn);
-			if(customerIndex == -1) {
+			if (customerIndex == -1) {
 				System.out.println("SSN `" + customerSsn + "` does not exist!");
 			}
 		}
-		
-		connectionList.add(new Connection(accountNumber,customerSsn));
-		System.out.println("Linked account number `" + accountNumber 
-				+ "` with customer " + customerSsn);
+
+		connectionList.add(new Connection(accountNumber, customerSsn));
+		System.out.println("Linked account number `" + accountNumber + "` with customer " + customerSsn);
 	}
-	
-	
+
 	private static void addNewCustomer() {
 		System.out.println("Enter customer name: ");
-		
+
 		String name = keyRead.nextLine();
 
 		System.out.println("Enter customer address: ");
@@ -172,11 +184,10 @@ public class EntryPoint {
 		clientList.addNewCustomer(newCustomer);
 
 		System.out.println("Added new customer `" + name + "` !\n\n");
-		
-		Customer c =  clientList.getCustomer(0);
+
+		Customer c = clientList.getCustomer(0);
 		System.out.println(c.getSsn());
 //		return ssn;
-		
+
 	}
 }
-	

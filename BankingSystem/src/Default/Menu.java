@@ -24,7 +24,7 @@ public class Menu {
 		int choice = Integer.parseInt(keyRead.nextLine());
 		return choice;
 	}
-	
+
 	void printFirstMenu() {
 		System.out.println("+----------------------------------------------+");
 		System.out.println("|         Welcome to Malek's BankSystem        |");
@@ -39,28 +39,15 @@ public class Menu {
 		System.out.println("6) Print a report.");
 		System.out.println("0) Exit.");
 	}
-	
+
 	void printNewAccountMenu() {
 		System.out.println("Choose the type of the account (saving or checking): ");
 		System.out.println("1) Saving Account.");
 		System.out.println("2) Checking Account.");
 	}
-	
-	void backToMainMenu() {
-		
-		System.out.println("Enter M to back to main menu: ");
-		String entry = keyRead.nextLine();
-		if (entry.equalsIgnoreCase("m")) {
-			printFirstMenu();
-			
-			
-		}
-				}
-	
-	
-	
-	
-	
+
+}
+
 //	private String getNewCustomerInfo() {
 //
 //		System.out.println("Enter your name: ");
@@ -79,5 +66,3 @@ public class Menu {
 //		System.out.println("Welcome " + name + " !\n\n");
 //		return ssn;
 //	}
-
-}

@@ -13,4 +13,12 @@ public class Reports {
 			
 		});
 	}
+	
+	public static void listWithdrawls(ArrayList<Transaction> transactions) {
+		System.out.println("Account# \t\t+ Amount \t\t+ Type");
+		
+		transactions.forEach((t)->{
+			System.out.println(t.getAccountNumber() + "\t\t" + t.getAmount() +"\t\t" + t.getType());
+		});
+	}
 }
