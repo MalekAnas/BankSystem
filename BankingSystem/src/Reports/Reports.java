@@ -1,7 +1,6 @@
 package Reports;
 
 import java.util.ArrayList;
-
 import Accounts.AccountsList;
 import Customers.CustomersList;
 import Transaction.Transaction;
@@ -53,7 +52,5 @@ public class Reports {
 		System.out.println("Accounts table:");
 		System.out.println(accounts.toString());
 	}
-	
-	
 	
 }

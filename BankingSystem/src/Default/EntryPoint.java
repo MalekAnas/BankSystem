@@ -27,6 +27,28 @@ public class EntryPoint {
 		performActionFirstMenu();
 	}
 
+	void performReportAction() {
+
+		int choice = menu.getUserChoice();
+		switch (choice) {
+		case 1:
+			Reports.listDeposits(transactionList);
+			break;
+		case 2:
+			Reports.listWithdrawls(transactionList);
+			break;
+		case 3:
+			Reports.transactionsSummary(transactionList);
+			break;
+		case 4:
+			
+			break;
+		case 5:
+			break;
+		}
+
+	}
+
 	private static void performActionFirstMenu() {
 		int choice;
 		System.out.println();
@@ -64,6 +86,8 @@ public class EntryPoint {
 
 			break;
 		case 6:
+			menu.printReportMenu();
+
 			Reports.listDeposits(transactionList);
 			prinAreport();
 			break;
@@ -192,4 +216,5 @@ public class EntryPoint {
 //		return ssn;
 
 	}
+
 }
