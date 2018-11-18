@@ -7,9 +7,6 @@ public class Checking extends Account {
 
 	public Checking(){
 		
-		nextAccountNum ++;
-		this.setBalance(getBalance());
-		this.chekInterest();
 	}
 	
 	@Override
