@@ -1,5 +1,6 @@
 package Default;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -16,7 +17,7 @@ public class EntryPoint {
 	static Scanner keyRead = new Scanner(System.in);
 	static AccountsList myAccountList = new AccountsList();
 	static CustomersList clientList = new CustomersList();
-	static LinkedList<Connection> connectionList = new LinkedList();
+	static ArrayList<Connection> connectionList = new ArrayList();
 	
 	public static void main(String[] args) {
 		menu = new Menu();
@@ -40,6 +41,7 @@ public class EntryPoint {
 			performActionFirstMenu();
 			break;
 		case 2:
+			linkAccountToUser();
 			break;
 		}
 	}
@@ -65,6 +67,13 @@ public class EntryPoint {
 		menu.printFirstMenu();
 		performActionFirstMenu();
 
+	}
+	
+	private static void linkAccountToUser() {
+		System.out.println("Enter account number: ");
+		String accountNumber = keyRead.nextLine();
+		myAccountList.get
+//		connectionList.
 	}
 	
 }
