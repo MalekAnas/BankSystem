@@ -44,7 +44,9 @@ public class CustomersList {
 			return clientsList.get(i);
 		}	
 
-
+	public int getNumberOfCustomers() {
+		return clientsList.size();
+	}
 	
 
 	public void setCustomersList(ArrayList<Customer> customersList) {

@@ -2,6 +2,7 @@ package Reports;
 
 import java.util.ArrayList;
 
+import Customers.CustomersList;
 import Transaction.Transaction;
 
 public class Reports {
@@ -26,7 +27,6 @@ public class Reports {
 	}
 	
 	public static void transactionsSummary(ArrayList<Transaction> transactions) {
-		System.out.println("Account# \t\t+ Amount \t\t+ Type");
 		double withdrawals = 0.0;
 		double deposits = 0.0;
 		
@@ -41,6 +41,11 @@ public class Reports {
 		System.out.println("total withdrawals amount:" + withdrawals);
 		System.out.println("total deposits amount:" + deposits);
 
+	}
+	
+	public static void numberOfCustomers(CustomersList customers) {
+		int num = customers.getNumberOfCustomers();
+		System.out.println("Number of customers: " +  num);
 	}
 	
 	
