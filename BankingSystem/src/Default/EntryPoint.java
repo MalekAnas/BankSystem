@@ -100,11 +100,8 @@ public class EntryPoint {
 	}
 
 	private static void makeAWithdrawl() {
-		System.out.println("Enter the account number:");
-		int accountNumber = Integer.parseInt(keyRead.nextLine());
-		int i = myAccountList.getIndexByAccountNumber(accountNumber);
-		Account depositAccount = myAccountList.getAccountByIndex(i);
 		int accountIndex = -1;
+		int accountNumber = -1;
 		while (accountIndex < 0) {
 			System.out.println("Enter account number: ");
 			accountNumber = Integer.parseInt(keyRead.nextLine());
@@ -113,19 +110,18 @@ public class EntryPoint {
 				System.out.println("Account `" + accountNumber + "` does not exist!");
 			}
 		}
+		Account withdrawalAccount = myAccountList.getAccountByIndex(accountIndex);
+		
 		// add Exception Handling
 		System.out.println("Enter the withdrawl amount: ");
 		double withdrawlAmount = Double.parseDouble(keyRead.nextLine());
-		depositAccount.withdrawl(withdrawlAmount);
+		withdrawalAccount.withdrawl(withdrawlAmount);
 		transactionList.add(new Transaction(withdrawlAmount, "Credit", accountNumber));
 	}
 
 	private static void makeAdeposit() {
-		System.out.println("Enter the account number:");
-		int accountNumber = Integer.parseInt(keyRead.nextLine());
-		int i = myAccountList.getIndexByAccountNumber(accountNumber);
 		int accountIndex = -1;
-
+		int accountNumber = -1;
 		while (accountIndex < 0) {
 			System.out.println("Enter account number: ");
 			accountNumber = Integer.parseInt(keyRead.nextLine());
@@ -134,7 +130,7 @@ public class EntryPoint {
 				System.out.println("Account `" + accountNumber + "` does not exist!");
 			}
 		}
-		Account depositAccount = myAccountList.getAccountByIndex(i);
+		Account depositAccount = myAccountList.getAccountByIndex(accountIndex);
 
 		// add Exception Handling
 		System.out.println("Enter the deposit amount");
@@ -145,8 +141,6 @@ public class EntryPoint {
 
 	private static void createANewAccount() {
 
-//		getNewCustomerInfo();
-//		String ssn = getNewCustomerInfo();
 		menu.printNewAccountMenu();
 		int choice = menu.getUserChoice();
 
