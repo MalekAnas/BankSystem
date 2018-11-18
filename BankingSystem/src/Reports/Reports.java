@@ -9,8 +9,9 @@ public class Reports {
 		System.out.println("Account# \t\t+ Amount \t\t+ Type" );
 
 		transactions.forEach((t)-> {
-			System.out.println(t.getAccountNumber() + "\t\t " + t.getAmount() + "\t\t" + t.getType());
-			
+			if(t.getType().equals("Debit"))
+				System.out.println(t.getAccountNumber() + "\t\t " 
+						+ t.getAmount() + "\t\t" + t.getType());
 		});
 	}
 	
