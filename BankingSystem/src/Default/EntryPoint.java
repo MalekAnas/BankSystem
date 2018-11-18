@@ -17,8 +17,8 @@ public class EntryPoint {
 	static Scanner keyRead = new Scanner(System.in);
 	static AccountsList myAccountList = new AccountsList();
 	static CustomersList clientList = new CustomersList();
-
 	static ArrayList<Connection> connectionList = new ArrayList();
+	static ArrayList<>
 	
 
 	public static void main(String[] args) {
@@ -98,7 +98,8 @@ public class EntryPoint {
 	
 		//add Exception Handling
 		double depositAmount = Double.parseDouble(keyRead.nextLine());
-		depositAccount.deposit(depositAmount);		
+		depositAccount.deposit(depositAmount);
+		transac
 	}
 
 	private static void createANewAccount() {
