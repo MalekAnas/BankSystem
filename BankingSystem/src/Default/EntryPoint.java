@@ -12,27 +12,49 @@ import Customers.CustomersList;
 
 public class EntryPoint {
 	
-	Menu menu;
+	static Menu menu;
+	static Scanner keyRead = new Scanner(System.in);
+	static AccountsList myAccountList = new AccountsList();
+	static CustomersList clientList = new CustomersList();
+	static LinkedList<Connection> connectionList = new LinkedList();
 	
 	public static void main(String[] args) {
-		
-		Scanner keyRead = new Scanner(System.in);
-		AccountsList myAccountList = new AccountsList();
-		CustomersList clientList = new CustomersList();
-		LinkedList<Connection> connectionList = new LinkedList();
-		
 		menu = new Menu();
 		menu.printFirstMenu();
-		menu.performActionFirstMenu();
+		performActionFirstMenu();
+	}
+	
+	private static void performActionFirstMenu() {
+		int choice;
+		System.out.println();
+		choice = getUserChoice();
+
+		switch (choice) {
+		case 0:
+			System.out.println("Program finished, Thank you ");
+			System.exit(0);
+			break;
+		case 1:
+			createANewAccount();
+			menu.printFirstMenu();
+			performActionFirstMenu();
+			break;
+		case 2:
+			break;
+		}
+	}
+	
+	private static int getUserChoice() {
+		System.out.println("\nEnter your choice here:");
+		int choice = Integer.parseInt(keyRead.nextLine());
+		return choice;
+
 	}
 	
 	private static void createANewAccount() {
 
-		getNewCustomerInfo();
-		String ssn = getNewCustomerInfo();
-		System.out.println("Choose the type of the account (saving or checking): ");
-		System.out.println("1) Saving Account.");
-		System.out.println("2) Checking Account.");
+//		getNewCustomerInfo();
+//		String ssn = getNewCustomerInfo();
 		menu.printCreateAccountMenu();
 		int choice = getUserChoice();
 
