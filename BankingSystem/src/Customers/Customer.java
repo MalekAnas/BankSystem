@@ -11,9 +11,9 @@ public class Customer {
 
 	public Customer(String name, String address, String ssn) {
 
-		this.name = getName();
-		this.address = getAddress();
-		this.ssn = getSsn();
+		this.name = name;
+		this.address = address;
+		this.ssn = ssn;
 	}
 
 
