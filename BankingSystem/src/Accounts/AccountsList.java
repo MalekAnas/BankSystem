@@ -1,10 +1,11 @@
 package Accounts;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class AccountsList {
+public class AccountsList{
 
-	LinkedList<Account> accountsList = new LinkedList<>();
+	ArrayList<Account> accountsList = new ArrayList<>();
 
 
 	public void addNewAccount(Account newAccount) {

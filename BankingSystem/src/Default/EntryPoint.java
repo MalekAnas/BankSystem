@@ -11,19 +11,19 @@ import Connections.Connection;
 import Customers.CustomersList;
 
 public class EntryPoint {
-	
+
 	static Menu menu;
 	static Scanner keyRead = new Scanner(System.in);
 	static AccountsList myAccountList = new AccountsList();
 	static CustomersList clientList = new CustomersList();
 	static LinkedList<Connection> connectionList = new LinkedList();
-	
+
 	public static void main(String[] args) {
 		menu = new Menu();
 		menu.printFirstMenu();
 		performActionFirstMenu();
 	}
-	
+
 	private static void performActionFirstMenu() {
 		int choice;
 		System.out.println();
@@ -40,16 +40,25 @@ public class EntryPoint {
 			performActionFirstMenu();
 			break;
 		case 2:
+			
+			break;
+		case 3: 
+			System.out.println("Enter the account number:");
+			String accountNumber = keyRead.nextLine();
+			
+			
+			double amount = Double.parseDouble(keyRead.nextLine());
+			(amount);
 			break;
 		}
 	}
-	
+
 	private static void createANewAccount() {
 
 //		getNewCustomerInfo();
 //		String ssn = getNewCustomerInfo();
 		menu.printNewAccountMenu();
-		int choice = getUserChoice();
+		int choice = menu.getUserChoice();
 
 		Account account = new Account();
 
@@ -66,5 +75,5 @@ public class EntryPoint {
 		performActionFirstMenu();
 
 	}
-	
+
 }
