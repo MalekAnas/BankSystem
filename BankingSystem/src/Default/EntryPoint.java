@@ -39,12 +39,12 @@ public class EntryPoint {
 			break;
 		case 1:
 			createANewAccount();
-			menu.printFirstMenu();
+			menu.backToMainMenu();
 			performActionFirstMenu();
 			break;
 		case 2:
 			linkAccountToUser();
-			menu.printFirstMenu();
+			menu.backToMainMenu();
 			performActionFirstMenu();
 			break;
 		case 3: 
@@ -59,11 +59,11 @@ public class EntryPoint {
 			break;
 		case 5:
 			makeATransaction();
-			menu.printFirstMenu();
+			menu.backToMainMenu();
 			performActionFirstMenu();
 		case 7:
 			addNewCustomer();
-			menu.printFirstMenu();
+			menu.backToMainMenu();
 			performActionFirstMenu();
 		}
 	}

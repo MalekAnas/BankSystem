@@ -53,6 +53,8 @@ public class Menu {
 		String entry = keyRead.nextLine();
 		if (entry.equalsIgnoreCase("m")) {
 			printFirstMenu();
+			
+			
 		}
 				}
 	
