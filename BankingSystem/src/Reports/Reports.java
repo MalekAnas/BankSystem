@@ -31,9 +31,9 @@ public class Reports {
 		double deposits = 0.0;
 		
 		for (Transaction t : transactions) {
-			if(t.getType().equals("Debit")) {
+			if(t.getType().equals("Credit")) {
 				withdrawals += t.getAmount();
-			}else if(t.getType().equals("Credit")) {
+			}else if(t.getType().equals("Debit")) {
 				deposits += t.getAmount();
 			}
 		}

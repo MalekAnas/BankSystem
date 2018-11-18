@@ -27,7 +27,7 @@ public class EntryPoint {
 		performActionFirstMenu();
 	}
 
-	void performReportAction() {
+	private static void performReportAction() {
 
 		int choice = menu.getUserChoice();
 		switch (choice) {
@@ -87,8 +87,10 @@ public class EntryPoint {
 
 			break;
 		case 6:
-
-			prinAreport();
+			menu.printReportMenu();
+			performReportAction();
+			menu.printFirstMenu();
+			performActionFirstMenu();
 			break;
 
 		}
