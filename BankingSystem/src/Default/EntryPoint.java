@@ -58,7 +58,7 @@ public class EntryPoint {
 
 	private static void makeAWithdrawl() {
 		System.out.println("Enter the account number:");
-		String accountNumber = keyRead.nextLine();
+		int accountNumber = Integer.parseInt(keyRead.nextLine());
 		int i = myAccountList.getIndexByAccountNumber(accountNumber);
 		Account depositAccount = myAccountList.getAccountByIndex(i);
 	
@@ -70,7 +70,7 @@ public class EntryPoint {
 
 	private static void makeAdeposit() {
 		System.out.println("Enter the account number:");
-		String accountNumber = keyRead.nextLine();
+		int accountNumber = Integer.parseInt(keyRead.nextLine());
 		int i = myAccountList.getIndexByAccountNumber(accountNumber);
 		Account depositAccount = myAccountList.getAccountByIndex(i);
 	
