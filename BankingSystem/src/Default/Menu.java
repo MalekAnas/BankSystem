@@ -2,9 +2,6 @@ package Default;
 
 import java.util.LinkedList;
 import java.util.Scanner;
-
-import com.sun.org.apache.bcel.internal.generic.L2D;
-
 import Accounts.Account;
 import Accounts.AccountsList;
 import Accounts.Checking;
@@ -16,7 +13,7 @@ import Exceptions.CompleteYourInfo;
 import Transaction.Transaction;
 
 public class Menu {
-	
+
 	String accountNumber;
 	String ssn;
 
@@ -27,15 +24,12 @@ public class Menu {
 	CustomersList clientList = new CustomersList();
 
 	LinkedList<Connection> connectionList = new LinkedList();
-	
-	
+
 	public static void main(String[] args) {
 
-		
-		
-//		Menu menu = new Menu();
-//		menu.printFirstMenu();
-//		menu.performActionFirstMenu();
+		Menu menu = new Menu();
+		menu.printFirstMenu();
+		menu.performActionFirstMenu();
 
 	}
 
@@ -45,7 +39,6 @@ public class Menu {
 		System.out.println("+----------------------------------------------+");
 		System.out.println();
 		System.out.println();
-
 		System.out.println("1) Create new Account.");
 		System.out.println("2) Link account to user.");
 		System.out.println("3) Make a deposit");
@@ -67,17 +60,14 @@ public class Menu {
 			break;
 		case 1:
 			createANewAccount();
-
+			printFirstMenu();
+			performActionFirstMenu();
 			break;
 		case 2:
-			signInCustomer();
 			break;
 		}
 	}
 
-	
-
-	
 	private String getNewCustomerInfo() {
 
 		System.out.println("Enter your name: ");
@@ -97,8 +87,6 @@ public class Menu {
 		return ssn;
 	}
 
-	
-
 	int getUserChoice() {
 		System.out.println("\nEnter your choice here:");
 		int choice = Integer.parseInt(keyRead.nextLine());
@@ -106,12 +94,6 @@ public class Menu {
 		return choice;
 
 	}
-
-	
-
-	
-
-	
 
 	private void createANewAccount() {
 
@@ -133,8 +115,6 @@ public class Menu {
 		}
 
 		System.out.println(myAccountList.toString());
-		printFirstMenu();
-		performActionFirstMenu();
 
 	}
 
