@@ -2,7 +2,6 @@ package Reports;
 
 import java.util.ArrayList;
 
-import Customers.CustomersList;
 import Transaction.Transaction;
 
 public class Reports {
@@ -41,11 +40,6 @@ public class Reports {
 		System.out.println("total withdrawals amount:" + withdrawals);
 		System.out.println("total deposits amount:" + deposits);
 
-	}
-	
-	public static void numberOfCustomers(CustomersList customers) {
-		int num = customers.getNumberOfCustomers();
-		System.out.println("Number of customers: " +  num);
 	}
 	
 	

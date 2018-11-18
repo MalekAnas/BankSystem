@@ -10,6 +10,7 @@ import Connections.Connection;
 import Customers.Customer;
 import Customers.CustomersList;
 import Exceptions.CompleteYourInfo;
+import Reports.Reports;
 import Transaction.Transaction;
 
 public class Menu {
@@ -25,6 +26,16 @@ public class Menu {
 		return choice;
 	}
 
+	void printReportMenu() {
+		System.out.println("1) List Deposits.");
+		System.out.println("2) List withdrawls.");
+		System.out.println("3) Transaction summary.");
+		System.out.println("4) List customers.");
+		System.out.println("5) List Accounts.");
+	}
+	
+	
+	
 	void printFirstMenu() {
 		System.out.println("+----------------------------------------------+");
 		System.out.println("|         Welcome to Malek's BankSystem        |");
