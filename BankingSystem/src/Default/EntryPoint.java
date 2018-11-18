@@ -1,5 +1,6 @@
 package Default;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -16,7 +17,9 @@ public class EntryPoint {
 	static Scanner keyRead = new Scanner(System.in);
 	static AccountsList myAccountList = new AccountsList();
 	static CustomersList clientList = new CustomersList();
-	static LinkedList<Connection> connectionList = new LinkedList();
+
+	static ArrayList<Connection> connectionList = new ArrayList();
+	
 
 	public static void main(String[] args) {
 		menu = new Menu();
@@ -40,17 +43,41 @@ public class EntryPoint {
 			performActionFirstMenu();
 			break;
 		case 2:
+
 			
 			break;
 		case 3: 
-			System.out.println("Enter the account number:");
-			String accountNumber = keyRead.nextLine();
+			makeAdeposit();
+
+			break;
 			
-			
-			double amount = Double.parseDouble(keyRead.nextLine());
-			(amount);
+		case 4: 
+			makeAWithdrawl();
 			break;
 		}
+	}
+
+	private static void makeAWithdrawl() {
+		System.out.println("Enter the account number:");
+		String accountNumber = keyRead.nextLine();
+		int i = myAccountList.getIndexByAccountNumber(accountNumber);
+		Account depositAccount = myAccountList.getAccountByIndex(i);
+	
+		//add Exception Handling
+		System.out.println("Enter the withdrawl amount: ");
+		double withdrawlAmount = Double.parseDouble(keyRead.nextLine());
+		depositAccount.withdrawl(withdrawlAmount);				
+	}
+
+	private static void makeAdeposit() {
+		System.out.println("Enter the account number:");
+		String accountNumber = keyRead.nextLine();
+		int i = myAccountList.getIndexByAccountNumber(accountNumber);
+		Account depositAccount = myAccountList.getAccountByIndex(i);
+	
+		//add Exception Handling
+		double depositAmount = Double.parseDouble(keyRead.nextLine());
+		depositAccount.deposit(depositAmount);		
 	}
 
 	private static void createANewAccount() {
@@ -76,4 +103,12 @@ public class EntryPoint {
 
 	}
 
+	
+	private static void linkAccountToUser() {
+		System.out.println("Enter account number: ");
+		String accountNumber = keyRead.nextLine();
+		myAccountList.get
+//		connectionList.
+	}
 }
+	

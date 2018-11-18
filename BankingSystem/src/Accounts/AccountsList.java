@@ -15,7 +15,7 @@ public class AccountsList{
 	
 	
 	
-	public int getAccountByAccountNmber(String accountNumber){
+	public int getIndexByAccountNumber(String accountNumber){
 		
 		for(int i = 0 ; i < accountsList.size() ; i++) {
 			if(accountNumber.equals(accountsList.get(i).getAccountNumber())){
@@ -24,9 +24,10 @@ public class AccountsList{
 			
 		}
 		return -1;
-		
-		
-		
+	}
+	
+	public Account getAccountByIndex(int x) {
+		return accountsList.get(x);
 	}
 
 
