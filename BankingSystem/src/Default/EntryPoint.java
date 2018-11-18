@@ -2,7 +2,6 @@ package Default;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import Accounts.Account;
 import Accounts.AccountsList;
 import Accounts.Checking;
@@ -10,6 +9,7 @@ import Accounts.Savings;
 import Connections.Connection;
 import Customers.Customer;
 import Customers.CustomersList;
+import Transaction.Transaction;
 
 public class EntryPoint {
 
@@ -18,7 +18,7 @@ public class EntryPoint {
 	static AccountsList myAccountList = new AccountsList();
 	static CustomersList clientList = new CustomersList();
 	static ArrayList<Connection> connectionList = new ArrayList();
-	static ArrayList<>
+	static ArrayList<Transaction> transactionList = new ArrayList();
 	
 
 	public static void main(String[] args) {
@@ -87,7 +87,8 @@ public class EntryPoint {
 		//add Exception Handling
 		System.out.println("Enter the withdrawl amount: ");
 		double withdrawlAmount = Double.parseDouble(keyRead.nextLine());
-		depositAccount.withdrawl(withdrawlAmount);				
+		depositAccount.withdrawl(withdrawlAmount);
+		transactionList.add(new Transaction(withdrawlAmount,"Credit",accountNumber));
 	}
 
 	private static void makeAdeposit() {
@@ -99,7 +100,7 @@ public class EntryPoint {
 		//add Exception Handling
 		double depositAmount = Double.parseDouble(keyRead.nextLine());
 		depositAccount.deposit(depositAmount);
-		transac
+		transactionList.add(new Transaction(depositAmount,"Debit",accountNumber));
 	}
 
 	private static void createANewAccount() {
