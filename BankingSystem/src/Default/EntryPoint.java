@@ -69,7 +69,7 @@ public class EntryPoint {
 		}
 
 		System.out.println(myAccountList.toString());
-		printFirstMenu();
+		menu.printFirstMenu();
 		performActionFirstMenu();
 
 	}
