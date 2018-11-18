@@ -1,5 +1,5 @@
 package Transaction;
 
-public class Credit {
+public class Credit extends Transaction {
 
 }
