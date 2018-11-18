@@ -43,7 +43,7 @@ public class EntryPoint {
 			performActionFirstMenu();
 			break;
 		case 2:
-
+			linkAccountToUser();
 			
 			break;
 		case 3: 
@@ -107,24 +107,28 @@ public class EntryPoint {
 	private static void linkAccountToUser() {
 		
 		int accountIndex = -1;
+		int accountNumber = 0;
 		while(accountIndex < 0) {
 			System.out.println("Enter account number: ");
-			String accountNumber = keyRead.nextLine();
+			accountNumber = Integer.parseInt(keyRead.nextLine());
 			accountIndex = myAccountList.getIndexByAccountNumber(accountNumber);
 			if(accountIndex == -1) {
 				System.out.println("Account `" + accountNumber + "` does not exist!");
 			}
 		}
 		
-		int customerIndex;
+		int customerIndex = -1;
+		String customerSsn = "";
 		while(customerIndex < 0) {
 			System.out.println("Enter customer ssn: ");
-			String customerSsn = keyRead.nextLine();
+			customerSsn = keyRead.nextLine();
 			customerIndex = clientList.searchCustomerBySsn(customerSsn);
 			if(customerIndex == -1) {
 				System.out.println("SSN `" + customerSsn + "` does not exist!");
 			}
 		}
+		
+		connectionList.add(new Connection(accountNumber,customerSsn));
 		//weeed
 		
 //		connectionList.
