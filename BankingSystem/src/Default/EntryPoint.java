@@ -41,9 +41,10 @@ public class EntryPoint {
 			Reports.transactionsSummary(transactionList);
 			break;
 		case 4:
-			
+			Reports.numberOfCustomers(clientList);
 			break;
 		case 5:
+			Reports.listAccounts(myAccountList);
 			break;
 		}
 
@@ -86,9 +87,7 @@ public class EntryPoint {
 
 			break;
 		case 6:
-			menu.printReportMenu();
 
-			Reports.listDeposits(transactionList);
 			prinAreport();
 			break;
 
