@@ -8,6 +8,7 @@ import Accounts.AccountsList;
 import Accounts.Checking;
 import Accounts.Savings;
 import Connections.Connection;
+import Customers.Customer;
 import Customers.CustomersList;
 
 public class EntryPoint {
@@ -53,6 +54,8 @@ public class EntryPoint {
 		case 4: 
 			makeAWithdrawl();
 			break;
+		case 7:
+			addNewCustomer();
 		}
 	}
 
@@ -128,9 +131,26 @@ public class EntryPoint {
 		}
 		
 		connectionList.add(new Connection(accountNumber,customerSsn));
-		//weeed
+
+	}
+	
+	private static void addNewCustomer() {
+		System.out.println("Enter customer name: ");
 		
-//		connectionList.
+		String name = keyRead.nextLine();
+
+		System.out.println("Enter customer address: ");
+		String address = keyRead.nextLine();
+
+		System.out.println("Enter customer social security number: ");
+		String ssn = keyRead.nextLine();
+
+		Customer newCustomer = new Customer(name, address, ssn);
+		clientList.addNewCustomer(newCustomer);
+
+		System.out.println("Added new customer `" + name + "` !\n\n");
+//		return ssn;
+		
 	}
 }
 	
