@@ -70,9 +70,27 @@ public class EntryPoint {
 	}
 	
 	private static void linkAccountToUser() {
-		System.out.println("Enter account number: ");
-		String accountNumber = keyRead.nextLine();
-		myAccountList.get
+		
+		int accountIndex = -1;
+		while(accountIndex < 0) {
+			System.out.println("Enter account number: ");
+			String accountNumber = keyRead.nextLine();
+			accountIndex = myAccountList.getIndexByAccountNumber(accountNumber);
+			if(accountIndex == -1) {
+				System.out.println("Account `" + accountNumber + "` does not exist!");
+			}
+		}
+		
+		int customerIndex;
+		while(customerIndex < 0) {
+			System.out.println("Enter customer ssn: ");
+			String customerSsn = keyRead.nextLine();
+			customerIndex = clientList.searchCustomerBySsn(customerSsn);
+			if(customerIndex == -1) {
+				System.out.println("SSN `" + customerSsn + "` does not exist!");
+			}
+		}
+		
 //		connectionList.
 	}
 	
