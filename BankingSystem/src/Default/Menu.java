@@ -94,14 +94,17 @@ public class Menu {
 		return choice;
 
 	}
+	
+	void printNewAccountMenu() {
+		System.out.println("Choose the type of the account (saving or checking): ");
+		System.out.println("1) Saving Account.");
+		System.out.println("2) Checking Account.");
+	}
 
 	private void createANewAccount() {
 
 		getNewCustomerInfo();
 		String ssn = getNewCustomerInfo();
-		System.out.println("Choose the type of the account (saving or checking): ");
-		System.out.println("1) Saving Account.");
-		System.out.println("2) Checking Account.");
 		int choice = getUserChoice();
 
 		Account account = new Account();
