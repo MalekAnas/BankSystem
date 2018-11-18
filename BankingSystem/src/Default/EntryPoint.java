@@ -125,6 +125,7 @@ public class EntryPoint {
 				System.out.println("SSN `" + customerSsn + "` does not exist!");
 			}
 		}
+		//weeed
 		
 //		connectionList.
 	}
