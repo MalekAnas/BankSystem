@@ -27,7 +27,7 @@ public class EntryPoint {
 	private static void performActionFirstMenu() {
 		int choice;
 		System.out.println();
-		choice = getUserChoice();
+		choice = menu.getUserChoice();
 
 		switch (choice) {
 		case 0:
@@ -42,13 +42,6 @@ public class EntryPoint {
 		case 2:
 			break;
 		}
-	}
-	
-	private static int getUserChoice() {
-		System.out.println("\nEnter your choice here:");
-		int choice = Integer.parseInt(keyRead.nextLine());
-		return choice;
-
 	}
 	
 	private static void createANewAccount() {
