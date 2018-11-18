@@ -140,7 +140,8 @@ public class EntryPoint {
 		}
 		
 		connectionList.add(new Connection(accountNumber,customerSsn));
-
+		System.out.println("Linked account number `" + accountNumber 
+				+ "` with customer " + customerSsn);
 	}
 	
 	private static void addNewCustomer() {
@@ -158,6 +159,9 @@ public class EntryPoint {
 		clientList.addNewCustomer(newCustomer);
 
 		System.out.println("Added new customer `" + name + "` !\n\n");
+		
+		Customer c =  clientList.getCustomer(0);
+		System.out.println(c.getSsn());
 //		return ssn;
 		
 	}

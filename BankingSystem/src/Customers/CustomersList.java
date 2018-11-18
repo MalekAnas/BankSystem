@@ -27,10 +27,10 @@ public class CustomersList {
 	
 
 
-	public  int searchCustomerBySsn(String ssn) {
+	public int searchCustomerBySsn(String ssn) {
 
 		for (int i = 0; i < clientsList.size(); i++) {
-			if (ssn == (clientsList.get(i).getSsn()))
+			if (ssn.equals((clientsList.get(i).getSsn())))
 				return i;
 		}
 
@@ -39,10 +39,10 @@ public class CustomersList {
 	}
 
 	
-public Customer getCustomer(int i) {
-		
-		return clientsList.get(i);
-	}	
+	public Customer getCustomer(int i) {
+			
+			return clientsList.get(i);
+		}	
 
 
 	
