@@ -87,6 +87,7 @@ public class EntryPoint {
 		Account depositAccount = myAccountList.getAccountByIndex(i);
 	
 		//add Exception Handling
+		
 		double depositAmount = Double.parseDouble(keyRead.nextLine());
 		depositAccount.deposit(depositAmount);		
 	}
@@ -143,6 +144,7 @@ public class EntryPoint {
 		System.out.println("Linked account number `" + accountNumber 
 				+ "` with customer " + customerSsn);
 	}
+	
 	
 	private static void addNewCustomer() {
 		System.out.println("Enter customer name: ");

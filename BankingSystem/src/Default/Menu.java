@@ -47,6 +47,14 @@ public class Menu {
 		System.out.println("2) Checking Account.");
 	}
 	
+	void backToMainMenu() {
+		
+		System.out.println("Enter M to back to main menu: ");
+		String entry = keyRead.nextLine();
+		if (entry.equalsIgnoreCase("m")) {
+			printFirstMenu();
+		}
+				}
 	
 	
 	
