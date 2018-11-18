@@ -44,17 +44,27 @@ public class EntryPoint {
 			break;
 		case 2:
 			linkAccountToUser();
+			menu.printFirstMenu();
+			performActionFirstMenu();
 			break;
 		case 3: 
 			makeAdeposit();
+			menu.printFirstMenu();
+			performActionFirstMenu();
 			break;
 		case 4: 
 			makeAWithdrawl();
+			menu.printFirstMenu();
+			performActionFirstMenu();
 			break;
 		case 5:
 			makeATransaction();
+			menu.printFirstMenu();
+			performActionFirstMenu();
 		case 7:
 			addNewCustomer();
+			menu.printFirstMenu();
+			performActionFirstMenu();
 		}
 	}
 
