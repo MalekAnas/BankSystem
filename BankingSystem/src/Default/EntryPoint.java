@@ -53,7 +53,16 @@ public class EntryPoint {
 		case 4: 
 			makeAWithdrawl();
 			break;
+		case 5:
+			makeATransaction();
+			
 		}
+	}
+
+	private static void makeATransaction() {
+
+		int fromAccount, toAccount;
+		System.out.println("Enter source account number: ");
 	}
 
 	private static void makeAWithdrawl() {

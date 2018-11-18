@@ -37,6 +37,7 @@ public class Menu {
 		System.out.println("4) Make a withdrawl.");
 		System.out.println("5) Make a transaction.");
 		System.out.println("6) Print a report.");
+		System.out.println("7) Add new Customer.");
 		System.out.println("0) Exit.");
 	}
 	
