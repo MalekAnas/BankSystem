@@ -9,6 +9,7 @@ import Accounts.Savings;
 import Connections.Connection;
 import Customers.Customer;
 import Customers.CustomersList;
+import Reports.Reports;
 import Transaction.Transaction;
 
 public class EntryPoint {
@@ -64,6 +65,7 @@ public class EntryPoint {
 		
 			break;
 		case 6:
+			Reports.listDeposits(transactionList);
 			prinAreport();
 			break;
 			
