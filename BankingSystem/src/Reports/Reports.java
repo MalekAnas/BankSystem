@@ -2,6 +2,7 @@ package Reports;
 
 import java.util.ArrayList;
 
+import Accounts.AccountsList;
 import Customers.CustomersList;
 import Transaction.Transaction;
 
@@ -46,6 +47,11 @@ public class Reports {
 	public static void numberOfCustomers(CustomersList customers) {
 		int num = customers.getNumberOfCustomers();
 		System.out.println("Number of customers: " +  num);
+	}
+	
+	public static void listAccounts(AccountsList accounts) {
+		System.out.println("Accounts table:");
+		System.out.println(accounts.toString());
 	}
 	
 	
