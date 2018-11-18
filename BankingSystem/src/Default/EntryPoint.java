@@ -63,6 +63,7 @@ public class EntryPoint {
 
 		int fromAccount, toAccount;
 		System.out.println("Enter source account number: ");
+		fromAccount = Integer.parseInt(keyRead.nextLine());
 	}
 
 	private static void makeAWithdrawl() {
