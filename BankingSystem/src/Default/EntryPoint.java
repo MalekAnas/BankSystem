@@ -44,19 +44,24 @@ public class EntryPoint {
 			break;
 		case 2:
 			linkAccountToUser();
-			
 			break;
 		case 3: 
 			makeAdeposit();
-
 			break;
-			
 		case 4: 
 			makeAWithdrawl();
 			break;
+		case 5:
+			makeATransaction();
 		case 7:
 			addNewCustomer();
 		}
+	}
+
+	private static void makeATransaction() {
+
+		int fromAccount, toAccount;
+		System.out.println("Enter source account number: ");
 	}
 
 	private static void makeAWithdrawl() {
