@@ -55,7 +55,7 @@ public class EntryPoint {
 
 //		getNewCustomerInfo();
 //		String ssn = getNewCustomerInfo();
-		menu.printCreateAccountMenu();
+		menu.printNewAccountMenu();
 		int choice = getUserChoice();
 
 		Account account = new Account();
