@@ -58,23 +58,22 @@ public class EntryPoint {
 			performActionFirstMenu();
 			break;
 		case 5:
-			makeATransaction();
-			menu.backToMainMenu();
-			performActionFirstMenu();
-		case 7:
 			addNewCustomer();
 			menu.backToMainMenu();
 			performActionFirstMenu();
+		
+			break;
+		case 6:
+			prinAreport();
+			break;
+			
 		}
 	}
 
-	private static void makeATransaction() {
+	
 
-		int fromAccount, toAccount;
-		System.out.println("Enter source account number: ");
-		fromAccount = Integer.parseInt(keyRead.nextLine());
-		System.out.println("Enter source account number: ");
-		toAccount = Integer.parseInt(keyRead.nextLine());
+	private static void prinAreport() {
+		// TODO Auto-generated method stub
 		
 	}
 
